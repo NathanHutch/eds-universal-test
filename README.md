@@ -2,8 +2,8 @@
 Your project's description...
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.aem.page/
-- Live: https://main--{repo}--{owner}.aem.live/
+- Preview: https://main--eds-universal-test--NathanHutch.aem.page/
+- Live: https://main--eds-universal-test--NathanHutch.aem.live/
 
 ## Documentation
 
