@@ -1,0 +1,331 @@
+/* Teaser Block Styles */
+
+/* Base teaser container */
+.block.teaser {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.block.teaser:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.block.teaser:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+/* Image container and styling */
+.block.teaser .teaser-image-container {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  background-color: var(--light-color);
+}
+
+.block.teaser .teaser-image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.block.teaser .teaser-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease-in-out;
+}
+
+.block.teaser .teaser-image.teaser-image-hover {
+  transform: scale(1.04);
+}
+
+/* Content container */
+.block.teaser .teaser-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+/* Meta information (topic and date) */
+.block.teaser .teaser-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.block.teaser .teaser-topic {
+  color: #0063be;
+  font-weight: 500;
+}
+
+.block.teaser .teaser-divider {
+  color: #777673;
+  font-weight: 400;
+}
+
+.block.teaser .teaser-date {
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+/* Title styling - different sizes based on variant and character count */
+.block.teaser .teaser-title {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+/* Default title size for with-image variant (H5 equivalent) */
+.block.teaser .teaser-title-small {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+/* Medium title size for no-image variant with >=53 characters (H4 equivalent) */
+.block.teaser .teaser-title-medium {
+  font-size: 27px;
+  line-height: 36px;
+}
+
+/* Large title size for no-image variant with <53 characters (H3 equivalent) */
+.block.teaser .teaser-title-large {
+  font-size: 44px;
+  line-height: 56px;
+}
+
+.block.teaser:hover .teaser-title {
+  color: #0073dd;
+}
+
+/* Description text */
+.block.teaser .teaser-description {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  color: var(--text-color);
+  
+  /* Limit to 3 lines for consistency */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Links and buttons */
+.block.teaser .teaser-link,
+.block.teaser .teaser-button {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.block.teaser .teaser-link:hover,
+.block.teaser .teaser-button:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.block.teaser .teaser-button {
+  display: inline-block;
+  background-color: var(--link-color);
+  color: var(--background-color);
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.block.teaser .teaser-button:hover {
+  background-color: var(--link-hover-color);
+  color: var(--background-color);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* No-image variant styling */
+.block.teaser.no-image .teaser-image-container {
+  display: none;
+}
+
+.block.teaser.no-image .teaser-content {
+  padding: 32px 24px;
+}
+
+.block.teaser.no-image .teaser-title-large {
+  margin-bottom: 8px;
+}
+
+.block.teaser.no-image .teaser-title-medium {
+  margin-bottom: 12px;
+}
+
+/* Dark theme variant */
+.block.teaser.dark {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+}
+
+.block.teaser.dark .teaser-title {
+  color: var(--background-color);
+}
+
+.block.teaser.dark .teaser-description {
+  color: var(--background-color);
+}
+
+.block.teaser.dark .teaser-date {
+  color: #e0e0e0;
+}
+
+.block.teaser.dark:hover .teaser-title {
+  color: #66a3ff;
+}
+
+/* Responsive design */
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .block.teaser {
+    max-width: 100%;
+  }
+  
+  .block.teaser .teaser-content {
+    padding: 32px;
+    gap: 20px;
+  }
+  
+  .block.teaser.no-image .teaser-content {
+    padding: 40px 32px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .block.teaser {
+    margin: 0 0 32px 0;
+    width: 312px; /* From Figma mobile specs */
+    max-width: calc(100vw - 32px);
+  }
+  
+  .block.teaser .teaser-image-container {
+    height: 200px;
+  }
+  
+  .block.teaser .teaser-content {
+    padding: 20px;
+    gap: 12px;
+  }
+  
+  .block.teaser .teaser-meta {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .block.teaser .teaser-title-small {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .block.teaser .teaser-title-medium {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  .block.teaser .teaser-title-large {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  .block.teaser .teaser-description {
+    font-size: 18px;
+    line-height: 28px;
+    -webkit-line-clamp: 4; /* Allow more lines on mobile */
+  }
+  
+  .block.teaser.no-image .teaser-content {
+    padding: 24px 20px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .block.teaser {
+    border: 2px solid var(--text-color);
+  }
+  
+  .block.teaser .teaser-button {
+    border: 2px solid var(--text-color);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .block.teaser,
+  .block.teaser .teaser-image,
+  .block.teaser .teaser-title,
+  .block.teaser .teaser-button {
+    transition: none !important;
+  }
+  
+  .block.teaser:hover {
+    transform: none;
+  }
+  
+  .block.teaser .teaser-image.teaser-image-hover {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .block.teaser {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  .block.teaser:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Focus-visible support for better keyboard navigation */
+.block.teaser:focus-visible {
+  outline: 3px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+/* Ensure proper stacking context */
+.block.teaser {
+  position: relative;
+  z-index: 1;
+}
+
+.block.teaser:hover {
+  z-index: 2;
+}
